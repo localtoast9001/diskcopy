@@ -1,0 +1,16 @@
+out/
+
+# Compiled binaries and libraries
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.bin
+
+# Editor swap/temp files
+*.swp
+*.swo
+*~
