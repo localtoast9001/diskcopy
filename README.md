@@ -1,10 +1,15 @@
 # diskcopy
-Utility like ddrescue to read floppy disks into a virtual disk image. Unlike ddrescue, the user had more control over error cases, which will hopefully not break the floppy drive.
+Utility like ddrescue to read floppy disks into a virtual disk image. Unlike ddrescue, the user has more control over error cases, which will hopefully not break the floppy drive.
 
 # Build
 ```
-cd src/
 make
 ```
 
-This produces a binary under the out/ directory.
+This produces a diskcopy binary under the out/ directory.
+
+## Run Unit Tests
+
+```
+make unittest
+```
