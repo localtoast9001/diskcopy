@@ -6,6 +6,10 @@
 #include <iostream>
 
 #include "arguments.hpp"
+#include "copy_processor.hpp"
+#include "file_device.hpp"
+#include <fcntl.h>
+
 using namespace diskcopy;
 
 void print_usage()
@@ -30,6 +34,29 @@ int main(
     {
         print_usage();
         return 1; // Non-zero return value indicates failure.
+    }
+
+    error err;
+    copy_processor processor(args.block_size());
+    file_device input;
+    file_device output;
+
+    if (!input.open(args.input_file().c_str(), O_RDONLY, 0, err))
+    {
+        std::cerr << "Error: Failed to open input file '" << args.input_file() << "'. Code: " << err.code() << ", Message: " << err.message() << "\n";
+        return 1;
+    }
+
+    if (!output.open(args.output_file().c_str(), O_WRONLY | O_CREAT, 0644, err))
+    {
+        std::cerr << "Error: Failed to open output file '" << args.output_file() << "'. Code: " << err.code() << ", Message: " << err.message() << "\n";
+        return 1;
+    }
+
+    if (!processor.copy(input, output))
+    {
+        std::cerr << "Error: Failed to copy data.\n";
+        return 1;
     }
 
 	return 0;

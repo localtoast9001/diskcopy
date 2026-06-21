@@ -7,6 +7,7 @@ INCLUDES :=\
 TARGET := ../out/diskcopy_ut
 PROD_SRC := \
   ../src/arguments.cpp \
+  ../src/copy_processor.cpp \
   ../src/error.cpp \
   ../src/file_device.cpp \
   ../src/file_handle.cpp \

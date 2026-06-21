@@ -7,6 +7,7 @@ INCLUDES :=\
 TARGET := ../out/diskcopy
 SRC := \
 	arguments.cpp \
+	copy_processor.cpp \
 	error.cpp \
 	file_device.cpp \
 	file_handle.cpp \
