@@ -1,13 +1,16 @@
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -Wextra -O2
+CXXFLAGS := -std=c++20 -Wall -Wextra -O2
 
 INCLUDES :=\
   ../inc
 
 TARGET := ../out/diskcopy
 SRC := \
-	main.cpp \
-	arguments.cpp
+	arguments.cpp \
+	error.cpp \
+	file_device.cpp \
+	file_handle.cpp \
+	main.cpp
 
 .PHONY: all clean
 

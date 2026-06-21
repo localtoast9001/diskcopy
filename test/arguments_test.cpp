@@ -8,6 +8,8 @@
 
 #define COUNT_OF(x) (sizeof(x) / sizeof((x)[0]))
 
+using namespace diskcopy;
+
 /**
  * Test class for arguments behavior.
  */

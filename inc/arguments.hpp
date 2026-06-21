@@ -13,6 +13,9 @@
 
 #define ARGUMENTS_DEFAULT_BLOCK_SIZE 512
 
+namespace diskcopy
+{
+
 /**
  * Represents parsed command-line arguments.
  */
@@ -58,5 +61,7 @@ private:
     std::string _output_file;
     uint64_t _block_size;
 };
+
+}
 
 #endif // __ARGUMENTS_HPP__

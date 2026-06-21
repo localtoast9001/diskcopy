@@ -3,17 +3,18 @@
  * File: main.cpp
  */
 
- #include <iostream>
+#include <iostream>
 
- #include "arguments.hpp"
+#include "arguments.hpp"
+using namespace diskcopy;
 
- void print_usage()
- {
-     std::cout << "Usage: diskcopy if=<input_file> of=<output_file> [bs=<block_size>]\n";
-     std::cout << "  if: Required. Path to the input file.\n";
-     std::cout << "  of: Required. Path to the output file.\n";
-     std::cout << "  bs: Optional. Block size in bytes (must be a positive multiple of " << ARGUMENTS_DEFAULT_BLOCK_SIZE << "). Default is " << ARGUMENTS_DEFAULT_BLOCK_SIZE << ".\n";
- }
+void print_usage()
+{
+    std::cout << "Usage: diskcopy if=<input_file> of=<output_file> [bs=<block_size>]\n";
+    std::cout << "  if: Required. Path to the input file.\n";
+    std::cout << "  of: Required. Path to the output file.\n";
+    std::cout << "  bs: Optional. Block size in bytes (must be a positive multiple of " << ARGUMENTS_DEFAULT_BLOCK_SIZE << "). Default is " << ARGUMENTS_DEFAULT_BLOCK_SIZE << ".\n";
+}
 
 /**
  * Program entry point.
