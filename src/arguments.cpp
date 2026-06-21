@@ -5,6 +5,7 @@
 
 #include <cstring>
 #include "arguments.hpp"
+using namespace diskcopy;
 
 arguments::arguments()
 : _block_size(ARGUMENTS_DEFAULT_BLOCK_SIZE)

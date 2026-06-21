@@ -66,11 +66,15 @@ bool test_runner::should_run(
 int test_runner::run() const
 {
     summary total_summary = {0, 0};
+    test_context context;
+    context.init();
+
     for (const auto& pair : test_classes)
     {
         test_class* test = pair.second;
         if (test != nullptr && should_run(*test))
         {
+            test->start_run(&context);
             summary result = run_test(*test);
             total_summary.pass_count += result.pass_count;
             total_summary.fail_count += result.fail_count;

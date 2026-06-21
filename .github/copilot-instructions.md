@@ -10,7 +10,7 @@
 - Keep `out/` as generated build output only.
 
 ## Language and Tooling
-- Use C++17-compatible code.
+- Use C++20-compatible code.
 - Keep compiler compatibility with `g++` and flags used in `src/Makefile`.
 - Header include path is provided via `../inc` in the Makefile.
 - Use `.cpp` for C++ source files and `.hpp` for C++ header files.

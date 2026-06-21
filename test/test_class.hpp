@@ -11,6 +11,8 @@
 #include <string>
 #include <map>
 
+#include "test_context.hpp"
+
 /**
  * Base class for test classes.
  */
@@ -45,6 +47,17 @@ public:
      */
     static void init_instances(std::map<std::string, test_class*>& instances);
 
+    /**
+     * Gets the test context for this class.
+     * @return Pointer to the test context.
+     */
+    inline test_context* context() const
+    {
+        return _context;
+    }
+
+    void start_run(test_context* context);
+
 protected:
     test_class(const std::string& name);
 
@@ -53,6 +66,7 @@ protected:
 private:
     std::string _name;
     std::map<std::string, test_method> _methods;
+    test_context* _context;
 
     struct init_node
     {

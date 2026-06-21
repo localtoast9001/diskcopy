@@ -21,6 +21,11 @@ void test_class::init_instances(std::map<std::string, test_class*>& instances)
     }
 }
 
+void test_class::start_run(test_context* context)
+{
+    _context = context;
+}
+
 /**
  * Initializes a test class instance.
  *
@@ -28,7 +33,7 @@ void test_class::init_instances(std::map<std::string, test_class*>& instances)
  */
 test_class::test_class(
 	const std::string& name)
-	: _name(name)
+	: _name(name), _context(nullptr)
 {
     init_node* node = new init_node{init_head, this};
     init_head = node;
